@@ -1,0 +1,66 @@
+MATCH (n)-[r]-()
+DELETE r, n
+MATCH (n)
+DELETE n
+
+
+LOAD CSV WITH HEADERS FROM "file:///concepts.csv" AS row
+WITH row WHERE row[":ID"] IS NOT NULL
+MERGE (n:Node {id: toString(row[":ID"])})
+SET n.name = row.name,
+    n.type = row.type,
+    n.parent = row.parent,
+    n.描述 = row.描述,
+    n.类型 = row.类型,
+    n.importedAt = datetime();
+
+LOAD CSV WITH HEADERS FROM "file:///relations.csv" AS row
+WITH row, toString(row[":START_ID"]) AS startId, toString(row[":END_ID"]) AS endId
+// 确保 startNode 和 endNode 存在，若不存在则创建
+MERGE (startNode:Node {id: startId})
+MERGE (endNode:Node {id: endId})
+// 创建关系
+MERGE (startNode)-[r:RELATION {type: row.type}]->(endNode)
+SET r.importedAt = datetime()
+RETURN startNode, endNode, r;
+
+docker run -d --name container_name \  //-d表示容器后台运行 --name指定容器名字
+	-p 7474:7474 -p 7687:7687 \  //映射容器的端口号到宿主机的端口号
+	-v /home/neo4j/data:/data \  //把容器内的数据目录挂载到宿主机的对应目录下
+	-v /home/neo4j/logs:/logs \  //挂载日志目录
+	-v /home/neo4j/conf:/var/lib/neo4j/conf   //挂载配置目录
+	-v /home/neo4j/import:/var/lib/neo4j/import \  //挂载数据导入目录
+	--env NEO4J_AUTH=neo4j/password \  //设定数据库的名字的访问密码
+	neo4j //指定使用的镜像
+
+docker run -d --name kg_container \
+    -p 7474:7474 -p 7687:7687 \
+    -v ./docker/data:/data \
+    -v ./docker/logs:/logs \
+    -v ./docker/conf:/var/lib/neo4j/conf \
+    -v ./docker/import:/var/lib/neo4j/import \
+    -v ./docker/plugins:/var/lib/neo4j/plugins \
+    --env NEO4J_AUTH=neo4j/your_password \
+    neo4j
+
+LOAD CSV WITH HEADERS FROM "file:///concepts.csv" AS row
+WITH row, toString(row[":ID"]) AS id
+WHERE id IS NOT NULL
+CALL (row, id){
+    CALL apoc.create.node([row.type], {id: id, name: row.name, parent: row.parent, 描述: row.描述, 类型: row.类型, importedAt: datetime()}) YIELD node
+    RETURN node
+}
+RETURN node;
+
+LOAD CSV WITH HEADERS FROM "file:///relations.csv" AS row
+WITH row WHERE row[":START_ID"] IS NOT NULL AND row[":END_ID"] IS NOT NULL
+MERGE (startNode {id: toString(row[":START_ID"])})
+MERGE (endNode {id: toString(row[":END_ID"])})
+WITH startNode, endNode, row
+CALL apoc.create.relationship(
+    startNode, 
+    row["type"], 
+    {importedAt: datetime()}, 
+    endNode
+) YIELD rel
+RETURN rel;
