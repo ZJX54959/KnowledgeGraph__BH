@@ -64,3 +64,26 @@ CALL apoc.create.relationship(
     endNode
 ) YIELD rel
 RETURN rel;
+
+// 创建父子关系
+MATCH (child)
+WHERE child.parent IS NOT NULL
+MATCH (parent {id: child.parent})
+MERGE (parent)-[:PARENT_OF]->(child)
+RETURN parent, child;
+
+LOAD CSV WITH HEADERS FROM "file:///concepts.csv" AS row
+WITH row, toString(row[":ID"]) AS id
+WHERE id IS NOT NULL
+CALL apoc.create.node([row.type], apoc.map.fromPairs([key IN keys(row) | [key, row[key]]])) YIELD node
+RETURN node;
+
+// 假设您知道上次导入的时间戳
+MATCH (n)
+WHERE n.importedAt = datetime("2023-10-01T12:00:00") // 使用实际的时间戳
+DETACH DELETE n;
+
+// 删除关系
+MATCH ()-[r]-()
+WHERE r.importedAt = datetime("2023-10-01T12:00:00") // 使用实际的时间戳
+DELETE r;
