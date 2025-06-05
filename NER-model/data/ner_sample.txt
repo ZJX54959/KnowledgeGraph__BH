@@ -1,0 +1,66 @@
+北 B-ORG
+京 I-ORG
+大 I-ORG
+学 I-ORG
+位 O
+于 O
+北 B-LOC
+京 I-LOC
+市 I-LOC
+海 B-LOC
+淀 I-LOC
+区 I-LOC
+
+李 B-PER
+明 I-PER
+在 O
+清 B-ORG
+华 I-ORG
+大 I-ORG
+学 I-ORG
+读 O
+书 O
+
+今 O
+天 O
+上 B-LOC
+海 I-LOC
+的 O
+天 O
+气 O
+真 O
+不 O
+错 O
+
+苹 B-ORG
+果 I-ORG
+公 I-ORG
+司 I-ORG
+发 O
+布 O
+了 O
+新 O
+款 O
+iPhone B-PRO
+手 I-PRO
+机 I-PRO
+
+明 B-TIME
+天 I-TIME
+下 O
+午 O
+三 B-TIME
+点 I-TIME
+开 O
+会 O
+
+2023 B-DATE
+年 I-DATE
+10 I-DATE
+月 I-DATE
+1 I-DATE
+日 I-DATE
+是 O
+国 B-DATE
+庆 I-DATE
+节 I-DATE

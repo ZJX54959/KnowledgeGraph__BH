@@ -1,0 +1,26 @@
+[
+  {
+    "text": "北京大学位于北京市海淀区",
+    "labels": ["B-ORG", "I-ORG", "I-ORG", "I-ORG", "O", "O", "B-LOC", "I-LOC", "I-LOC", "B-LOC", "I-LOC", "I-LOC"]
+  },
+  {
+    "text": "李明在清华大学读书",
+    "labels": ["B-PER", "I-PER", "O", "B-ORG", "I-ORG", "I-ORG", "I-ORG", "O", "O"]
+  },
+  {
+    "text": "今天上海的天气真不错",
+    "labels": ["O", "O", "B-LOC", "I-LOC", "O", "O", "O", "O", "O", "O"]
+  },
+  {
+    "text": "苹果公司发布了新款iPhone手机",
+    "labels": ["B-ORG", "I-ORG", "I-ORG", "I-ORG", "O", "O", "O", "O", "O", "B-PRO", "I-PRO", "I-PRO"]
+  },
+  {
+    "text": "明天下午三点开会",
+    "labels": ["B-TIME", "I-TIME", "O", "O", "B-TIME", "I-TIME", "O", "O"]
+  },
+  {
+    "text": "2023年10月1日是国庆节",
+    "labels": ["B-DATE", "I-DATE", "I-DATE", "I-DATE", "I-DATE", "I-DATE", "O", "B-DATE", "I-DATE", "I-DATE"]
+  }
+]
