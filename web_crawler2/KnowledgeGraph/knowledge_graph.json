@@ -1,0 +1,248 @@
+[
+    {
+        "name": "知识图谱",
+        "contents": "知识图谱（Knowledge Graph），在图书情报界称为知识域可视化或知识领域映射地图，是显示知识发展进程与结构关系的一系列各种不同的图形，用可视化技术描述知识资源及其载体，挖掘、分析、构建、绘制和显示知识及它们之间的相互联系。",
+        "children": [],
+        "parents": [],
+        "URL": "https://baike.baidu.com/item/知识图谱/8120012",
+        "basic_info": {
+            "中文名": "知识图谱",
+            "外文名": "Knowledge Graph/Vault",
+            "别    名": "科学知识图谱",
+            "应    用": "理论与方法与计量学引文分析"
+        },
+        "catalog": [
+            "    发展由来",
+            "    主要特点",
+            "    应用范围"
+        ],
+        "content_paragraphs": [],
+        "references": []
+    },
+    {
+        "name": "知识域",
+        "contents": "知识域(KnowledgeAreas)，它是一个二级学科所包含的知识领域划分。",
+        "children": [],
+        "parents": [],
+        "URL": "https://baike.baidu.com/item/%E7%9F%A5%E8%AF%86%E5%9F%9F/5032793",
+        "basic_info": {
+            "中文名": "知识域",
+            "外文名": "Knowledge domain",
+            "类    型": "软件工程"
+        },
+        "catalog": [],
+        "content_paragraphs": [],
+        "references": []
+    },
+    {
+        "name": "结构关系",
+        "contents": "结构关系指主语一般由名词，代词充当，谓语一般由动词、形容词充当。",
+        "children": [],
+        "parents": [],
+        "URL": "https://baike.baidu.com/item/%E7%BB%93%E6%9E%84%E5%85%B3%E7%B3%BB/15654486",
+        "basic_info": {
+            "中文名": "结构关系",
+            "外文名": "Structural relationship"
+        },
+        "catalog": [],
+        "content_paragraphs": [],
+        "references": []
+    },
+    {
+        "name": "可视化技术",
+        "contents": "完整的地理空间信息可视化概念主要包括科学计算可视化、数据可视化和信息可视化。地理空间信息可视化技术的核心是为使用者提供空间信息直观的、可交互的可视化环境。 [1]",
+        "children": [],
+        "parents": [],
+        "URL": "https://baike.baidu.com/item/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%80%E6%9C%AF/1549548",
+        "basic_info": {
+            "中文名": "可视化技术",
+            "类    型": "数据学术语"
+        },
+        "catalog": [
+            "    技术介绍",
+            "    关键技术"
+        ],
+        "content_paragraphs": [],
+        "references": [
+            {
+                "title": "大数据分析-可视化",
+                "url": "https://baike.baidu.com/reference/1549548/533aYdO6cr3_z3kATPGKmP35ZHnCNYuuvLOFV-ZzzqIP0XOpX5nyFIsw5N4wsPRoGUTFv5xnX4RCxLzkUg8Y",
+                "source": "2",
+                "date": "．中国大数据产业观察"
+            },
+            {
+                "title": "说说数据可视化技术的四大派系",
+                "url": "https://baike.baidu.com/reference/1549548/533aYdO6cr3_z3kATKCMz6_3YSqRZI6lt-GCV7BzzqIP0XOpX5nyFIsw5N4wsPRoGUTpuZ9GYcIU2br6C01Y7vIPcO4qEep82SOhF1zGwLzl_dA1hIkA_g",
+                "source": "3",
+                "date": "．中国大数据产业观察"
+            },
+            {
+                "title": "可视化关键技术介绍",
+                "url": "https://baike.baidu.com/reference/1549548/533aYdO6cr3_z3kATPOMy_zyNSmXMYj-urbWBLtzzqIP0XOpStznFNpj48QvsPRoGUXIvtdhMplHxrn6DFRE7egXcuQzQ6t62Suj",
+                "source": "4",
+                "date": "．中国安防行业网"
+            }
+        ]
+    },
+    {
+        "name": "知识资源",
+        "contents": "知识资源是通过智力劳动发现和创造的，进入经济系统的人类知识。知识经物化可为人类带来巨大财富，可促进物质生产，从而产生市场价值，也可直接作为精神消费对象。企业的知识资源是指企业拥有的可以反复利用的，建立在知识和信息技术基础上的，能给企业带来财富增长的资源。包括三个方面：（1）企业创造和拥有的无形资产。如企业文化、品牌、信誉、渠道等市场方面的无形资产，专利、版权、技术诀窍、商业秘密等知识产权，技术流程、管理流程、管理模式与方法、信息网络等组织管理资产。（2）信息资源。通过信息网络可以收集到的与企业生产经营有关的各种信息。（3）智力资源。企业可以利用的、存在于企业人力资源中的各种知识和创造性地运用知识的能力。 [1]",
+        "children": [],
+        "parents": [],
+        "URL": "https://baike.baidu.com/item/%E7%9F%A5%E8%AF%86%E8%B5%84%E6%BA%90/2336050",
+        "basic_info": {
+            "中文名": "知识资源",
+            "功    能": "给社会带来财富增长",
+            "相关组织": "中国知识资源总库",
+            "特    点": "反复利用"
+        },
+        "catalog": [
+            "    发展历程",
+            "    区别内容",
+            "    发展战略"
+        ],
+        "content_paragraphs": [],
+        "references": [
+            {
+                "title": "主要资料来源",
+                "url": "https://baike.baidu.com/reference/2336050/533aYdO6cr3_z3kATPSLxan1N3nENtv-t7CHU7NzzqIP0XOpX5nyFIo98tY2-rlkGwaEtJlwdN8Wmu35FRccrbMOIK51Tex2kHf_UzrByQ",
+                "source": "2",
+                "date": ""
+            }
+        ]
+    },
+    {
+        "name": "应用数学",
+        "contents": "应用数学（Applied Mathematics）是应用目的明确的数学理论和方法的总称，研究如何应用数学知识到其它范畴（尤其是科学）的数学分枝，可以说是纯数学的相反。包括微分方程、向量分析、矩阵、傅里叶变换、复变分析、数值方法、概率论、数理统计、运筹学、控制理论、组合数学、信息论等许多数学分支，也包括从各种应用领域中提出的数学问题的研究。计算数学有时也可视为应用数学的一部分。",
+        "children": [],
+        "parents": [],
+        "URL": "https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E6%95%B0%E5%AD%A6/2236",
+        "basic_info": {
+            "中文名": "应用数学",
+            "外文名": "Applied Mathematics",
+            "性    质": "数学学科分支",
+            "应    用": "如何应用数学知识到其它范畴"
+        },
+        "catalog": [
+            "    起源兴起",
+            "    发展现状",
+            "    相关名言"
+        ],
+        "content_paragraphs": [],
+        "references": []
+    },
+    {
+        "name": "信息科学",
+        "contents": "信息科学是研究信息运动规律和应用方法的科学，是由信息论、控制论、计算机理论、人工智能理论和系统论相互渗透、相互结合而成的一门新兴综合性科学。其支柱为信息论、系统论和控制论。信息技术就是能够扩展人的信息器官功能的一类技术。",
+        "children": [],
+        "parents": [],
+        "URL": "https://baike.baidu.com/item/%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/1296011",
+        "basic_info": {
+            "中文名": "信息科学",
+            "外文名": "Information Science",
+            "拼    音": "xìn xī kē xué",
+            "注    音": "ㄒㄧㄣˋ ㄒㄧㄎㄜ ㄒㄩㄝˊ"
+        },
+        "catalog": [
+            "    定义",
+            "    基本理论",
+            "    信息论",
+            "    控制论",
+            "    系统论",
+            "    研究内容",
+            "    课题方向",
+            "    课题内容",
+            "    发展简况",
+            "    重要意义",
+            "    机器智能"
+        ],
+        "content_paragraphs": [],
+        "references": [
+            {
+                "title": "信息科学概论",
+                "url": "https://baike.baidu.com/reference/1296011/533aYdO6cr3_z3kATPHYxfXzMHvANIv66rXUVuBzzqIP0XOpX4vrUZ184tY2-uIpFwTG_45rZcFawLGuCUgR6_JGcexhEbcqnCP6UGKUyb634YF1x40",
+                "source": "1",
+                "date": "．百度文库"
+            }
+        ]
+    },
+    {
+        "name": "引文分析",
+        "contents": "引文分析（Citation Analysis）是利用数学及统计学的方法和比较、归纳、抽象、概括等逻辑方法，对科学期刊、论文、著者等各种分析对象的引证与被引证现象进行分析，进而揭示其中的数量特征和内在规律的一种文献计量分析方法。",
+        "children": [],
+        "parents": [],
+        "URL": "https://baike.baidu.com/item/%E5%BC%95%E6%96%87%E5%88%86%E6%9E%90/6892836",
+        "basic_info": {
+            "中文名": "引文分析",
+            "外文名": "Citation analysis",
+            "运    用": "各种数学及统计学的方法",
+            "性    质": "逻辑方法"
+        },
+        "catalog": [
+            "    方法简介",
+            "    类型",
+            "    主要内容",
+            "    常见特点",
+            "    广泛适用性",
+            "    简便易用性",
+            "    功能特异性",
+            "    局限",
+            "    测度指标",
+            "    应用领域"
+        ],
+        "content_paragraphs": [],
+        "references": []
+    },
+    {
+        "name": "共现分析",
+        "contents": "共现分析（co-occurrence analysis）是2019年公布的图书馆·情报与文献学名词，出自《图书馆·情报与文献学名词》第一版。",
+        "children": [],
+        "parents": [],
+        "URL": "https://baike.baidu.com/item/%E5%85%B1%E7%8E%B0%E5%88%86%E6%9E%90/2603936",
+        "basic_info": {
+            "中文名": "共现分析",
+            "外文名": "co-occurrence analysis",
+            "所属学科": "图书馆·情报与文献学",
+            "公布时间": "2019年"
+        },
+        "catalog": [
+            "    定义",
+            "    出处"
+        ],
+        "content_paragraphs": [],
+        "references": [
+            {
+                "title": "共现分析",
+                "url": "https://baike.baidu.com/reference/2603936/533aYdO6cr3_z3kATPPZyK_0MyvAP9n-7ObbWrtzzqIP0XOpX5nyFJw38tow8PtuGg6Fs5YtbN8GgqaiThZKtfrFxGzi_DX3JcAp_ZM",
+                "source": "1",
+                "date": "．术语在线"
+            }
+        ]
+    },
+    {
+        "name": "知识架构",
+        "contents": "知识架构（knowledge architecture ）是2016年公布的管理科学技术名词。",
+        "children": [],
+        "parents": [],
+        "URL": "https://baike.baidu.com/item/%E7%9F%A5%E8%AF%86%E6%9E%B6%E6%9E%84/56528464",
+        "basic_info": {
+            "中文名": "知识架构",
+            "外文名": "knowledge architecture",
+            "所属学科": "管理科学技术",
+            "公布时间": "2016年"
+        },
+        "catalog": [
+            "    定义",
+            "    出处"
+        ],
+        "content_paragraphs": [],
+        "references": [
+            {
+                "title": "知识架构",
+                "url": "https://baike.baidu.com/reference/56528464/533aYdO6cr3_z3kATPeJmf3xZHrGNNv97baAWrtzzqIPmGapB5nyTcYm5cUy8flrHQXO_ptsL8UQl_qpUkQe4yC_5DWq9GOMG6BR5w",
+                "source": "1",
+                "date": "．术语在线"
+            }
+        ]
+    }
+]
