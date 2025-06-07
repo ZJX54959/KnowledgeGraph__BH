@@ -3,6 +3,7 @@ DELETE r, n
 MATCH (n)
 DELETE n
 
+--------------------------------------------------------------------------------
 
 LOAD CSV WITH HEADERS FROM "file:///concepts.csv" AS row
 WITH row WHERE row[":ID"] IS NOT NULL
@@ -23,7 +24,7 @@ MERGE (endNode:Node {id: endId})
 MERGE (startNode)-[r:RELATION {type: row.type}]->(endNode)
 SET r.importedAt = datetime()
 RETURN startNode, endNode, r;
-
+------------------------------------
 docker run -d --name container_name \  //-d表示容器后台运行 --name指定容器名字
 	-p 7474:7474 -p 7687:7687 \  //映射容器的端口号到宿主机的端口号
 	-v /home/neo4j/data:/data \  //把容器内的数据目录挂载到宿主机的对应目录下
@@ -52,6 +53,9 @@ CALL (row, id){
 }
 RETURN node;
 
+
+-------------------------------------------------------------------------------
+
 LOAD CSV WITH HEADERS FROM "file:///relations.csv" AS row
 WITH row WHERE row[":START_ID"] IS NOT NULL AND row[":END_ID"] IS NOT NULL
 MERGE (startNode {id: toString(row[":START_ID"])})
@@ -75,9 +79,16 @@ RETURN parent, child;
 LOAD CSV WITH HEADERS FROM "file:///concepts.csv" AS row
 WITH row, toString(row[":ID"]) AS id
 WHERE id IS NOT NULL
-CALL apoc.create.node([row.type], apoc.map.fromPairs([key IN keys(row) | [key, row[key]]])) YIELD node
+CALL apoc.create.node(
+    [row.type], 
+    apoc.map.merge(
+        {id: id}, 
+        apoc.map.fromPairs([key IN [k IN keys(row) WHERE k <> ":ID"] | [key, row[key]]])
+    )
+) YIELD node
 RETURN node;
 
+_____________________________________________________________________
 // 假设您知道上次导入的时间戳
 MATCH (n)
 WHERE n.importedAt = datetime("2023-10-01T12:00:00") // 使用实际的时间戳
@@ -87,3 +98,74 @@ DETACH DELETE n;
 MATCH ()-[r]-()
 WHERE r.importedAt = datetime("2023-10-01T12:00:00") // 使用实际的时间戳
 DELETE r;
+_____________________________________________________________________
+
+// 查找具有相同id的节点并计数
+MATCH (n)
+WHERE n.id IS NOT NULL
+WITH n.id AS id, collect(n) AS nodes
+WHERE size(nodes) > 1
+RETURN id, size(nodes) AS duplicateCount
+ORDER BY duplicateCount DESC;
+
+// 查找具有相同id的节点
+MATCH (n1)
+WHERE n1.id IS NOT NULL
+WITH n1.id AS id, collect(n1) AS nodes
+WHERE size(nodes) > 1
+// 保留第一个节点，删除其他节点
+WITH id, nodes[0] AS keepNode, nodes[1..] AS duplicateNodes
+UNWIND duplicateNodes AS dupNode
+// 将所有指向重复节点的关系重定向到保留的节点
+OPTIONAL MATCH (s)-[r]->(dupNode)
+WHERE s <> dupNode
+WITH keepNode, dupNode, s, r, type(r) AS relType, properties(r) AS relProps
+WHERE s IS NOT NULL
+CALL apoc.create.relationship(s, relType, relProps, keepNode) YIELD rel
+// 将所有从重复节点出发的关系重定向到保留的节点
+WITH keepNode, dupNode
+OPTIONAL MATCH (dupNode)-[r]->(t)
+WHERE t <> dupNode
+WITH keepNode, dupNode, t, r, type(r) AS relType, properties(r) AS relProps
+WHERE t IS NOT NULL
+CALL apoc.create.relationship(keepNode, relType, relProps, t) YIELD rel
+// 最后删除重复节点及其关系
+WITH DISTINCT keepNode, dupNode
+DETACH DELETE dupNode
+RETURN keepNode.id AS keptNodeId, count(dupNode) AS removedDuplicates;
+
+
+// 查找重复关系并计数
+MATCH (a)-[r]->(b)
+WITH a, b, type(r) AS relType, count(r) AS relCount
+WHERE relCount > 1
+RETURN a.id AS sourceId, b.id AS targetId, relType, relCount
+ORDER BY relCount DESC;
+
+// 查找并移除重复关系
+MATCH (a)-[r]->(b)
+WITH a, b, type(r) AS relType, collect(r) AS rels
+WHERE size(rels) > 1
+// 保留第一个关系，删除其他重复关系
+WITH a, b, relType, rels[0] AS keepRel, rels[1..] AS duplicateRels
+UNWIND duplicateRels AS dupRel
+DELETE dupRel
+RETURN a.id AS sourceId, b.id AS targetId, relType, count(dupRel) AS removedDuplicates;
+
+---
+
+//导入concepts.csv
+LOAD CSV WITH HEADERS FROM "file:///concepts.csv" AS row
+WITH row, toString(row[":ID"]) AS id
+WHERE id IS NOT NULL
+CALL apoc.create.node( // 需要安装apoc plugin
+    [row.type], 
+    apoc.map.merge(
+        {id: id}, 
+        apoc.map.fromPairs([
+            key IN [k IN keys(row) WHERE k <> ":ID"] 
+            | [CASE WHEN key ENDS WITH ":LABEL" THEN substring(key, 0, size(key) - size(":LABEL")) ELSE key END, row[key]]
+        ])
+    )
+) YIELD node
+RETURN node;

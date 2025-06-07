@@ -5,6 +5,7 @@ from typing import Union, Callable, Optional
 import logging
 import re
 import argparse
+import os
 
 # 配置日志
 logging.basicConfig(level=logging.INFO)
@@ -52,7 +53,7 @@ def extract_pdf(
         return ""
     
     else:
-        raise FileNotFoundError(f"路径不存在: {input_path}")
+        raise FileNotFoundError(f"\033[33m路径不存在: \033[0m{input_path}")
 
 def _process_single_file(file_path: Path, output_dir: Path, engine: str, image_handler, formula_handler) -> str:
     try:
@@ -206,5 +207,23 @@ if __name__ == "__main__":
     parser.add_argument("-im", "--image", help="处理图片", action="store_true")
     parser.add_argument("-f", "--formula", help="处理公式", action="store_true")
     args = parser.parse_args()
-    extract_pdf(args.input, args.output, args.engine, args.image, args.formula)
+
+    if not os.path.exists(args.output):
+        os.makedirs(args.output)
+
+    if args.input is None:
+        parser.print_help()
+        exit(1)
+    elif not os.path.exists(args.input):
+        print(f"\033[33m输入路径不存在:\033[0m {args.input}")
+        exit(1)
+    elif os.path.isfile(args.input) and not args.input.endswith('.pdf'):
+        print(f"\033[33m输入文件不是PDF: \033[0m{args.input}")
+        exit(1)
+    elif os.path.isdir(args.input):
+        for file in os.listdir(args.input):
+            if file.endswith('.pdf'):
+                extract_pdf(os.path.join(os.path.abspath(args.input), file), args.output, args.engine, args.image, args.formula)
+    elif os.path.isfile(args.input):
+        extract_pdf(args.input, args.output, args.engine, args.image, args.formula)
 

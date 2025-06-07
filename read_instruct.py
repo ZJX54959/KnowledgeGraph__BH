@@ -1,3 +1,4 @@
+from ntpath import isdir
 import os
 import json
 from openai import OpenAI
@@ -25,12 +26,20 @@ def construct_client(api_key):
 
     api_keys = [
         os.getenv('OPENAI_API_KEY'),
-        os.getenv('DASH_SCOPE_API_KEY'),
+        os.getenv('ANTHROPIC_API_KEY'),
+        os.getenv('OPENROUTER_API_KEY') or os.getenv('OPEN_ROUTER_API_KEY'),
+        os.getenv('DASHSCOPE_API_KEY') or os.getenv('DASH_SCOPE_API_KEY'),
+        os.getenv('SILICONFLOW_API_KEY') or os.getenv('SILICON_FLOW_API_KEY'),
+        # os.getenv('HUGGINGFACE_API_KEY') or os.getenv('HUGGING_FACE_API_KEY'),
+        os.getenv('ARK_API_KEY'),
+        os.getenv('AIMIXHUB_API_KEY') or os.getenv('AI_MIX_HUB_API_KEY') or os.getenv('AI_HUB_MIX_API_KEY') or os.getenv('AIHUBMIX_API_KEY'),
     ]
 
     if not client.api_key:
-        if api_keys:
-            client.api_key = api_keys[1]
+        for key in api_keys:
+            if key:
+                client.api_key = key
+                break
         else:
             raise ValueError("API key is not set")
     
@@ -173,7 +182,7 @@ def save_response(output_file, response):
     with open(output_file, 'a', encoding='utf-8') as out_file:
         # out_file.write(f"文件: {filename}\n")
         out_file.write(output + "\n")
-    print("数据筛选完成，结果已保存到", output_file)
+    print("\033[32m数据筛选完成，结果已保存到\033[0m", output_file)
 
 def update_hierarchy(current_hierarchy, new_priority=None):
     """ 更新标题层级结构 
@@ -205,64 +214,82 @@ def update_hierarchy(current_hierarchy, new_priority=None):
     return current_hierarchy.copy()
 
 if __name__ == "__main__":
-    args = argparse.ArgumentParser()
-    args.add_argument('-i', '--input', type=str, default='KG第1讲_note.md')
-    args.add_argument('-o', '--output', type=str, default='output.md')
-    args.add_argument('-p', '--prompt', type=str, default='convert.pmpt')
-    args.add_argument('-m', '--model', type=str, default='qwen-turbo')
-    args.add_argument('-a', '--api_key', type=str, default=os.getenv('DASH_SCOPE_API_KEY'), help='Custom API key, default is DASH_SCOPE_API_KEY0')
-    args.add_argument('-s', '--split', type=int, default=65536, help='Split size, default is 65536')
-    args.add_argument('-c', '--context_aware', action='store_true', help='Enable context-aware processing')
-    args = args.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--input', type=str)
+    parser.add_argument('-o', '--output', type=str, default='output.md')
+    parser.add_argument('-p', '--prompt', type=str, default='convert.pmpt')
+    parser.add_argument('-m', '--model', type=str, default='qwen-turbo')
+    parser.add_argument('-a', '--api_key', type=str, default=os.getenv('DASH_SCOPE_API_KEY'), help='Custom API key, default is DASH_SCOPE_API_KEY0')
+    parser.add_argument('-s', '--split', type=int, default=65536, help='Split size, default is 65536')
+    parser.add_argument('-c', '--context_aware', action='store_true', help='Enable context-aware processing')
+    args = parser.parse_args()
 
-    client = construct_client(args.api_key)
-    data_chunks = read_file('.', args.input, args.split)
-    
-    full_output = []
-    chat_history = []  # 新增：维护对话历史
-    
-    # 初始化系统提示
-    if args.context_aware:
-        system_prompt = push_instruct("", args.prompt, context_mode=True)["system"]
-        chat_history.append({"role": "system", "content": system_prompt})
-
-    for chunk in data_chunks:
+    def main(input=args.input, output=args.output):
+        client = construct_client(args.api_key)
+        data_chunks = read_file('.', input, args.split)
+        
+        full_output = []
+        chat_history = []  # 新增：维护对话历史
+        
+        # 初始化系统提示
         if args.context_aware:
-            # 上下文模式：分离系统提示和用户数据
-            prompt_data = push_instruct(chunk, args.prompt, context_mode=True)
-            chat_history.append({"role": "user", "content": prompt_data["user_data"]})
-        else:
-            # 传统模式
-            prompt = push_instruct(chunk, args.prompt)
-        
-        response = get_response(
-            prompt=prompt if not args.context_aware else None,
-            model=args.model,
-            client=client,
-            split=args.split,
-            context_aware=args.context_aware,
-            history=chat_history
-        )
-        
-        # 保存回复并维护历史
-        reply = response.choices[0].message.content.strip()
-        full_output.append(reply)
-        
-        if args.context_aware:
-            chat_history.append({"role": "assistant", "content": reply})
-            # 保持历史长度（防止token超限）
-            if len(chat_history) > 5:  # 保留最近5轮对话
-                chat_history = [chat_history[0]] + chat_history[-4:]
+            system_prompt = push_instruct("", args.prompt, context_mode=True)["system"]
+            chat_history.append({"role": "system", "content": system_prompt})
 
-        output_dir = os.path.dirname(args.output)
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
+        for chunk in data_chunks:
+            if args.context_aware:
+                # 上下文模式：分离系统提示和用户数据
+                prompt_data = push_instruct(chunk, args.prompt, context_mode=True)
+                chat_history.append({"role": "user", "content": prompt_data["user_data"]})
+            else:
+                # 传统模式
+                prompt = push_instruct(chunk, args.prompt)
+            
+            response = get_response(
+                prompt=prompt if not args.context_aware else None,
+                model=args.model,
+                client=client,
+                split=args.split,
+                context_aware=args.context_aware,
+                history=chat_history
+            )
+            
+            # 保存回复并维护历史
+            reply = response.choices[0].message.content.strip()
+            full_output.append(reply)
+            
+            if args.context_aware:
+                chat_history.append({"role": "assistant", "content": reply})
+                # 保持历史长度（防止token超限）
+                if len(chat_history) > 5:  # 保留最近5轮对话
+                    chat_history = [chat_history[0]] + chat_history[-4:]
 
-        # 合并结果并保存
-        with open(args.output, 'w', encoding='utf-8') as out_file:
-            out_file.write('\n\n'.join(full_output))
-        
-        # 打印进度
-        print(f"[{len(full_output)/len(data_chunks) * 100}%] Already processed {len(full_output) * args.split} tokens")
-    print("数据筛选完成，结果已保存到", args.output)
+            output_dir = os.path.dirname(output)
+            if not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+            if os.path.isdir(output):
+                output_file = os.path.join(output, os.path.basename(input) + '.md')
+            else:
+                output_file = output
 
+            # 合并结果并保存
+            with open(output_file, 'w', encoding='utf-8') as out_file:
+                out_file.write('\n\n'.join(full_output))
+            
+            # 打印进度
+            print(f"[\033[93m{len(full_output)/len(data_chunks) * 100}%\033[0m] Already processed {len(full_output) * args.split} tokens", end='\r')
+        print("\033[32m数据筛选完成，结果已保存到\033[0m", os.path.abspath(output_file))
+
+    if args.input is None:
+        parser.print_help()
+        exit(1)
+    elif not os.path.exists(args.input):
+        print(f"\033[33m输入路径不存在:\033[0m {args.input}")
+        exit(1)
+    elif os.path.isdir(args.input):
+        # single = not os.path.isdir(args.output)
+        for file in os.listdir(args.input):
+            if file.endswith('.txt'):
+                main(os.path.join(os.path.abspath(args.input), file))
+    elif os.path.isfile(args.input):
+        main()

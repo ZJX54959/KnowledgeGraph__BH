@@ -2,9 +2,14 @@ import re
 import csv
 from collections import defaultdict
 import hashlib
-from graphviz import Digraph
 import argparse
 import os
+try:
+    from graphviz import Digraph
+    VISUAL = True
+except:
+    print('graphviz not installed, skip visualize')
+    VISUAL = False
 
 class NoteParser:
     def __init__(self):
@@ -52,31 +57,51 @@ class NoteParser:
                 self.current_concept = cid
 
         # 关系提取
-        if '-->' in line:
-            parts = re.split(r'\s*-->\s*|\s*:\s*', line)
-            if len(parts) >= 2:
-                source = parts[0].strip()
-                target = parts[1].strip()
-                rel_type = parts[2].strip() if len(parts)>2 else 'RELATED'
-                if rematch := re.match(r'类型\s*=\s*(.+)', rel_type):
-                    rel_type = rematch.group(1)
+        # 匹配格式：- 源概念 --> 目标概念 : 关系类型 [属性键=属性值 ...]
+        # 考虑到关系类型和属性可能混合，使用更精确的匹配
+        if match := re.match(r'^-+\s*(.*?)\s*-->\s*(.*?)\s*:\s*([^\s]+)(?:\s+(.*))?$', line):
+            source = match.group(1).strip()
+            target = match.group(2).strip()
+            rel_type = match.group(3).strip()
+            props_str = match.group(4) # 属性字符串，可能为None
 
-                # 去除md符号(-)及空格
-                source = re.sub(r'^[\s-]+', '', source)
-                
-                self.relations.append({
-                    'source': self._generate_id(source),
-                    'target': self._generate_id(target),
-                    'type': rel_type,
-                    '_o_source_': source,
-                    '_o_target_': target
-                })
+            # 去除md符号(-)及空格
+            source = re.sub(r'^[\s-]+', '', source)
 
-        # 属性提取（支持多个键值对）
-        if '=' in line:
-            # 分割多个属性（支持空格分隔）
-            pairs = re.findall(r'(\w+)\s*=\s*([^=]+)(?=\s+\w+=|$)', line)
-            for key, value in pairs:
+            # 如果rel_type为f"类型={_type_}"，则令rel_type = _type_
+            if match := re.match(r'类型\s*=\s*(.+)', rel_type):
+                rel_type = match.group(1)
+
+            rel_props = {}
+            if props_str:
+                # 提取关系的属性，支持键=值和键="值"格式
+                prop_matches = re.finditer(r'(\w+)\s*=\s*([^\s=]+|"[^"]+")', props_str)
+                for p_match in prop_matches:
+                    key, value = p_match.groups()
+                    if value.startswith('"') and value.endswith('"'):
+                        value = value[1:-1]
+                    rel_props[key.strip()] = value.strip()
+
+            relation = {
+                'source': self._generate_id(source),
+                'target': self._generate_id(target),
+                'type': rel_type,
+                '_o_source_': source,
+                '_o_target_': target
+            }
+            relation.update(rel_props)  # 添加属性到关系字典
+            self.relations.append(relation)
+
+        # 概念属性提取（支持多个键值对和带引号的值）
+        # 确保只在当前概念存在时才尝试提取属性
+        if self.current_concept and '=' in line:
+            # 使用更健壮的属性解析模式，只匹配行尾或下一个键值对前的属性
+            prop_matches = re.finditer(r'(\w+)\s*=\s*([^\s=]+|"[^"]+")', line)
+            for match in prop_matches:
+                key, value = match.groups()
+                # 处理带引号的值
+                if value.startswith('"') and value.endswith('"'):
+                    value = value[1:-1]
                 self.concepts[self.current_concept]['props'][key.strip()] = value.strip()
 
     def export_csv(self, node_path, rel_path):
@@ -86,8 +111,7 @@ class NoteParser:
         for c in self.concepts.values():
             all_props.update(c['props'].keys())
         
-        # 节点文件头
-        fieldnames = [':ID', 'name', 'type', 'parent'] + sorted(all_props)
+        fieldnames = [':ID', 'name', 'type', 'parent'] + [f'{prop}:LABEL' for prop in sorted(all_props)]
         
         with open(node_path, 'w', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -97,10 +121,11 @@ class NoteParser:
                 row = {
                     ':ID': c['id'],
                     'name': c['name'],
-                    'type': c['type'],
+                    'type': c['type'], 
                     'parent': c['parent'] or ''
                 }
-                row.update(c['props'])
+                for prop_key, prop_value in c['props'].items():
+                    row[f'{prop_key}:LABEL'] = prop_value
                 writer.writerow(row)
 
         # 新增关系文件处理
@@ -108,11 +133,13 @@ class NoteParser:
             # 收集关系属性字段
             rel_props = set()
             for rel in self.relations:
-                rel_props.update(rel.keys())
-            rel_props -= {'source', 'target', 'type'}  # 排除固定字段
+                # 排除固定字段，只收集额外属性
+                for k in rel.keys():
+                    if k not in ['source', 'target', 'type', '_o_source_', '_o_target_']:
+                        rel_props.add(k)
             
             # 关系文件头
-            rel_fields = [':START_ID', ':END_ID', 'type'] + sorted(rel_props)
+            rel_fields = [':START_ID', ':END_ID', ':TYPE'] + [f'{prop}:LABEL' for prop in sorted(rel_props)]
             writer = csv.DictWriter(f, fieldnames=rel_fields)
             writer.writeheader()
             
@@ -120,14 +147,16 @@ class NoteParser:
                 row = {
                     ':START_ID': rel['source'],
                     ':END_ID': rel['target'],
-                    'type': rel.get('type', 'RELATED')
+                    ':TYPE': rel.get('type', 'RELATED')
                 }
-                # 添加额外属性
-                row.update({k: v for k, v in rel.items() 
-                          if k not in ['source', 'target', 'type']})
+                # 添加额外属性，键名加上 :LABEL 后缀
+                for k, v in rel.items():
+                    if k not in ['source', 'target', 'type', '_o_source_', '_o_target_']:
+                        row[f'{k}:LABEL'] = v
                 writer.writerow(row)
 
     def visualize(self):
+        if not VISUAL: return
         dot = Digraph()
         for c in self.concepts.values():
             dot.node(c['id'], c['name'])
@@ -143,12 +172,33 @@ if __name__ == "__main__":
     psr.add_argument('-v', '--visualize', action='store_true', help='visualize the knowledge graph')
     args = psr.parse_args()
 
-    parser = NoteParser()
+    def main(input=args.input):
+        parser = NoteParser()
+        
+        with open(input, 'r', encoding='utf-8') as f:
+            for line in f:
+                parser.parse_line(line.strip())
+        
+        input_filename = os.path.splitext(os.path.basename(input))[0]
+        parser.export_csv(os.path.join(args.output, input_filename + '_concepts.csv'), 
+                        os.path.join(args.output, input_filename + '_relations.csv'))
+        
+        if args.visualize:
+            parser.visualize()
     
-    with open(args.input, 'r', encoding='utf-8') as f:
-        for line in f:
-            parser.parse_line(line.strip())
-    
-    parser.export_csv(os.path.join(args.output, args.input.split('.')[0]+'_concepts.csv'), os.path.join(args.output, args.input.split('.')[0]+'_relations.csv')) 
-    if args.visualize:
-        parser.visualize()
+    if not os.path.exists(args.output):
+        os.makedirs(args.output)
+
+    if args.input is None:
+        psr.print_help()
+        exit(1)
+    elif not os.path.exists(args.input):
+        print(f"\033[33m输入路径不存在:\033[0m {args.input}")
+        exit(1)
+    elif os.path.isdir(args.input):
+        for file in os.listdir(args.input):
+            if file.endswith('.md'):
+                print(f"\033[32m处理文件:\033[0m {file}")
+                main(os.path.join(os.path.abspath(args.input), file))
+    elif os.path.isfile(args.input):
+        main()

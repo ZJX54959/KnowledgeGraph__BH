@@ -1,0 +1,11 @@
+openai
+graphviz
+pdfplumber
+pyMuPDF # fitz 是 PyMuPDF 的别名
+
+# 以下是可能的额外依赖，如果您的NER模型或web_crawler2模块有更复杂的依赖，请根据实际情况添加
+# torch
+# transformers
+# scikit-learn
+# requests # web_crawler2 可能需要
+# beautifulsoup4 # web_crawler2 可能需要

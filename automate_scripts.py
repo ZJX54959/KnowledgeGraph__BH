@@ -40,3 +40,29 @@ if __name__ == "__main__":
 
         for command in commands:
             run_script(command, args.verbose)
+
+
+'''
+python read_instruct.py -i .\KG第1讲_note.md -o output_1.md -m qwen-turbo-latest
+python md2csv.py -i output_1.md
+'''
+
+'''
+python md_formatter.py -i "D:\Downloads\48ef2b0b-a139-4b6a-84fd-dc6dbf02ee82.md" -o output\md_fmt
+python read_instruct.py -i .\output\md_fmt\48ef2b0b-a139-4b6a-84fd-dc6dbf02ee82.md -s 4096 -o output\md_read_2.md -m qwen-turbo -c
+'''
+
+'''
+conda activate base
+python .\pdf_extractor.py -i "D:\新建文件夹\知识图谱\第1讲-知识图谱概述-2025春季.pdf" -o output\pdf_ext
+python .\read_instruct.py -i .\output\pdf_ext\第1讲-知识图谱概述-2025春季.txt -s 4096 -o .\output\lectures_ext\pdf1.md
+python .\md2csv.py -i .\output\lectures_ext\pdf1.md -o .\output\lectures_ext\
+
+python .\pdf_extractor.py -i "D:\新建文件夹\知识图谱\第2讲-知识表示-2025春季.pdf" -o output\pdf_ext
+python .\read_instruct.py -i .\output\pdf_ext\第2讲-知识表示-2025春季.txt -s 4096 -o .\output\lectures_ext\pdf2.md
+python .\md2csv.py -i .\output\lectures_ext\pdf2.md
+'''
+
+'''
+python .\csv2rdf-jsonld.py -ic .\output\_concepts.csv -ir .\output\_relations.csv pdf_jsonld.jsonld
+'''
