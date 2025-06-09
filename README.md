@@ -176,7 +176,31 @@ graph TD
       - `_o_source_`、`_o_target_`为此关系的起始节点和结束节点的`name`
       - `属性1`、`属性2`等为关系的属性。大部分为空值，仅特定关系所对应属性位有值
 
-5. ### **☆导入知识图谱数据**[^3]
+5. ### **生成知识图谱Embedding**
+    ```powershell
+    python embedding_generator.py \
+        -i <PATH_TO_YOUR_INPUT_DIR> \
+        -o <PATH_TO_YOUR_OUTPUT_DIR>
+    ```
+    该脚本用于生成知识图谱中概念和关系的Embedding。它会加载指定目录下的所有概念和关系CSV文件，使用预训练的SentenceTransformer模型生成Embedding，并将Embedding和原始数据一同保存到输出目录。同时，原始的concepts.csv和relations.csv文件也会被复制到输出目录，以便于后续的RAG查询。
+    + **命令行参数**
+      - `-i`、`--input`：输入目录路径，必填项。该目录下应包含concepts.csv和relations.csv文件。
+      - `-o`、`--output`：输出目录路径，默认为`embeddings_output`。生成的Embedding文件和原始CSV文件将保存到此目录。
+      - `-m`、`--model_name`：用于生成Embedding的SentenceTransformer模型名称，默认为`all-MiniLM-L6-v2`。
+
+6. ### **基于RAG的知识图谱查询**
+    ```powershell
+    python rag_query.py \
+        -i <PATH_TO_YOUR_INPUT_DIR> \
+        -q "Your query here"
+    ```
+    该脚本用于基于检索增强生成（RAG）对知识图谱进行查询。它会加载指定目录下的概念和关系Embedding以及原始数据，根据用户查询搜索相似的概念和关系，并结合检索到的信息生成回复。
+    + **命令行参数**
+      - `-i`、`--input`：输入目录路径，必填项。该目录下应包含由`embedding_generator.py`生成的Embedding文件和原始CSV文件。
+      - `-q`、`--query`：用户查询语句，必填项。
+      - `-k`、`--top_k`：检索最相似概念和关系的K值，默认为`5`。
+
+7. ### **☆导入知识图谱数据**[^3]
     #### 方式1：使用neo4j自带的import工具[^2]
       ```bash
       neo4j-admin database import full \
@@ -335,6 +359,10 @@ graph TD
     - [ ] 知识融合
     - [ ] 知识推理
     - [ ] WebCrawler融合+文档
+    - [ ] RAG查询
+    - [ ] Gradio前端
+    - [ ] arXiv爬取
+    - [ ] NetworksX
 
 [^1]: [docker 安装部署Neo4j](https://www.cnblogs.com/caoyusang/p/13610408.html)
 [^2]: [Neo4j-Admin Import](https://neo4j.com/docs/operations-manual/current/tutorial/neo4j-admin-import/)

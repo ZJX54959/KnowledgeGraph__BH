@@ -139,7 +139,7 @@ class NoteParser:
                         rel_props.add(k)
             
             # 关系文件头
-            rel_fields = [':START_ID', ':END_ID', ':TYPE'] + [f'{prop}:LABEL' for prop in sorted(rel_props)]
+            rel_fields = [':START_ID', ':END_ID', ':TYPE', '_o_source_', '_o_target_'] + [f'{prop}:LABEL' for prop in sorted(rel_props)]
             writer = csv.DictWriter(f, fieldnames=rel_fields)
             writer.writeheader()
             
@@ -147,7 +147,9 @@ class NoteParser:
                 row = {
                     ':START_ID': rel['source'],
                     ':END_ID': rel['target'],
-                    ':TYPE': rel.get('type', 'RELATED')
+                    ':TYPE': rel.get('type', 'RELATED'),
+                    '_o_source_': rel.get('_o_source_', ''),
+                    '_o_target_': rel.get('_o_target_', '')
                 }
                 # 添加额外属性，键名加上 :LABEL 后缀
                 for k, v in rel.items():

@@ -9,3 +9,13 @@ pyMuPDF # fitz 是 PyMuPDF 的别名
 # scikit-learn
 # requests # web_crawler2 可能需要
 # beautifulsoup4 # web_crawler2 可能需要
+
+# pygraphviz
+# * 1
+# ! 2
+# ? 3
+numpy
+pandas
+sentence-transformers
+# TODO 4
+# @param 5
