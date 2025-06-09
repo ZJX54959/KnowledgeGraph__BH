@@ -11,6 +11,30 @@ class KnowledgeExtractor:
         """初始化知识提取器"""
         pass
     
+    def extract_all_links(self, html_path):
+        """从HTML文件中提取所有超链接的文本和URL
+        
+        Args:
+            html_path: HTML文件路径
+            
+        Returns:
+            list: 包含字典的列表，每个字典包含'text'和'url'键
+        """
+        success, soup_or_error, _ = self.load_html(html_path)
+        
+        if not success:
+            print(f"加载HTML文件失败: {soup_or_error}")
+            return []
+        
+        soup = soup_or_error
+        links = []
+        for a_tag in soup.find_all('a', href=True):
+            text = a_tag.get_text().strip()
+            url = a_tag['href']
+            if text and url:
+                links.append({'text': text, 'url': url})
+        return links
+
     def load_html(self, html_path):
         """加载HTML文件
         

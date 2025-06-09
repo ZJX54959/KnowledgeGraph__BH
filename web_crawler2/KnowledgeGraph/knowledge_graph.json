@@ -2,7 +2,96 @@
     {
         "name": "知识图谱",
         "contents": "知识图谱（Knowledge Graph），在图书情报界称为知识域可视化或知识领域映射地图，是显示知识发展进程与结构关系的一系列各种不同的图形，用可视化技术描述知识资源及其载体，挖掘、分析、构建、绘制和显示知识及它们之间的相互联系。",
-        "children": [],
+        "children": [
+            {
+                "name": "知识域",
+                "index": 1
+            },
+            {
+                "name": "结构关系",
+                "index": 2
+            },
+            {
+                "name": "可视化技术",
+                "index": 3
+            },
+            {
+                "name": "知识资源",
+                "index": 4
+            },
+            {
+                "name": "应用数学",
+                "index": 5
+            },
+            {
+                "name": "可视化技术",
+                "index": 3
+            },
+            {
+                "name": "信息科学",
+                "index": 6
+            },
+            {
+                "name": "引文分析",
+                "index": 7
+            },
+            {
+                "name": "共现分析",
+                "index": 8
+            },
+            {
+                "name": "知识架构",
+                "index": 9
+            },
+            {
+                "name": "多学科融合",
+                "index": 10
+            },
+            {
+                "name": "知识领域",
+                "index": 11
+            },
+            {
+                "name": "数据挖掘",
+                "index": 12
+            },
+            {
+                "name": "知识计量",
+                "index": 13
+            },
+            {
+                "name": "发达国家",
+                "index": 14
+            },
+            {
+                "name": "搜索引擎",
+                "index": 15
+            },
+            {
+                "name": "字串",
+                "index": 16
+            },
+            {
+                "name": "连贯性",
+                "index": 17
+            },
+            {
+                "name": "知识体系",
+                "index": 18
+            },
+            {
+                "name": "公共资源",
+                "index": 19
+            },
+            {
+                "name": "文本分析",
+                "index": 20
+            },
+            {
+                "name": "风险控制",
+                "index": 21
+            }
+        ],
         "parents": [],
         "URL": "https://baike.baidu.com/item/知识图谱/8120012",
         "basic_info": {
@@ -21,10 +110,38 @@
     },
     {
         "name": "知识域",
-        "contents": "知识域(KnowledgeAreas)，它是一个二级学科所包含的知识领域划分。",
-        "children": [],
-        "parents": [],
         "URL": "https://baike.baidu.com/item/%E7%9F%A5%E8%AF%86%E5%9F%9F/5032793",
+        "children": [
+            {
+                "name": "软件需求",
+                "index": 22
+            },
+            {
+                "name": "软件维护",
+                "index": 23
+            },
+            {
+                "name": "软件工程过程",
+                "index": 24
+            },
+            {
+                "name": "软件质量",
+                "index": 25
+            }
+        ],
+        "parents": [
+            [
+                [
+                    "index",
+                    0
+                ],
+                [
+                    "name",
+                    "知识图谱"
+                ]
+            ]
+        ],
+        "contents": "知识域(KnowledgeAreas)，它是一个二级学科所包含的知识领域划分。",
         "basic_info": {
             "中文名": "知识域",
             "外文名": "Knowledge domain",
@@ -36,10 +153,38 @@
     },
     {
         "name": "结构关系",
-        "contents": "结构关系指主语一般由名词，代词充当，谓语一般由动词、形容词充当。",
-        "children": [],
-        "parents": [],
         "URL": "https://baike.baidu.com/item/%E7%BB%93%E6%9E%84%E5%85%B3%E7%B3%BB/15654486",
+        "children": [
+            {
+                "name": "名词",
+                "index": 26
+            },
+            {
+                "name": "代词",
+                "index": 27
+            },
+            {
+                "name": "动词",
+                "index": 28
+            },
+            {
+                "name": "形容词",
+                "index": 29
+            }
+        ],
+        "parents": [
+            [
+                [
+                    "index",
+                    0
+                ],
+                [
+                    "name",
+                    "知识图谱"
+                ]
+            ]
+        ],
+        "contents": "结构关系指主语一般由名词，代词充当，谓语一般由动词、形容词充当。",
         "basic_info": {
             "中文名": "结构关系",
             "外文名": "Structural relationship"
@@ -50,10 +195,298 @@
     },
     {
         "name": "可视化技术",
-        "contents": "完整的地理空间信息可视化概念主要包括科学计算可视化、数据可视化和信息可视化。地理空间信息可视化技术的核心是为使用者提供空间信息直观的、可交互的可视化环境。 [1]",
-        "children": [],
-        "parents": [],
         "URL": "https://baike.baidu.com/item/%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%80%E6%9C%AF/1549548",
+        "children": [
+            {
+                "name": "科学计算可视化",
+                "index": 30
+            },
+            {
+                "name": "信息源",
+                "index": 31
+            },
+            {
+                "name": "工程计算",
+                "index": 32
+            },
+            {
+                "name": "科学可视化",
+                "index": 33
+            },
+            {
+                "name": "飞行模拟",
+                "index": 34
+            },
+            {
+                "name": "建模",
+                "index": 35
+            },
+            {
+                "name": "渲染",
+                "index": 36
+            },
+            {
+                "name": "光亮度",
+                "index": 37
+            },
+            {
+                "name": "颜色值",
+                "index": 38
+            },
+            {
+                "name": "图形工作站",
+                "index": 39
+            },
+            {
+                "name": "人机交互界面",
+                "index": 40
+            },
+            {
+                "name": "存储器",
+                "index": 41
+            },
+            {
+                "name": "图形卡",
+                "index": 42
+            },
+            {
+                "name": "视频处理",
+                "index": 43
+            },
+            {
+                "name": "主存储器",
+                "index": 44
+            },
+            {
+                "name": "图形系统",
+                "index": 45
+            },
+            {
+                "name": "交叉开关",
+                "index": 46
+            },
+            {
+                "name": "Crossbar",
+                "index": 47
+            },
+            {
+                "name": "交互性",
+                "index": 48
+            },
+            {
+                "name": "硬件加速",
+                "index": 49
+            },
+            {
+                "name": "RGBA",
+                "index": 50
+            },
+            {
+                "name": "双头显示",
+                "index": 51
+            },
+            {
+                "name": "图形系统",
+                "index": 45
+            },
+            {
+                "name": "路由器",
+                "index": 52
+            },
+            {
+                "name": "体系结构",
+                "index": 53
+            },
+            {
+                "name": "超级计算机",
+                "index": 54
+            },
+            {
+                "name": "软件开发工具",
+                "index": 55
+            },
+            {
+                "name": "人员设计",
+                "index": 56
+            },
+            {
+                "name": "图形工作站",
+                "index": 39
+            },
+            {
+                "name": "OpenGL",
+                "index": 57
+            },
+            {
+                "name": "应用程序接口",
+                "index": 58
+            },
+            {
+                "name": "OpenGL",
+                "index": 59
+            },
+            {
+                "name": "三维动画软件",
+                "index": 60
+            },
+            {
+                "name": "PTC",
+                "index": 61
+            },
+            {
+                "name": "视景仿真",
+                "index": 62
+            },
+            {
+                "name": "服务器软件",
+                "index": 63
+            },
+            {
+                "name": "可视化计算",
+                "index": 64
+            },
+            {
+                "name": "可视化计算",
+                "index": 64
+            },
+            {
+                "name": "解压缩",
+                "index": 65
+            },
+            {
+                "name": "控制流",
+                "index": 66
+            },
+            {
+                "name": "数据流",
+                "index": 67
+            },
+            {
+                "name": "工作站",
+                "index": 68
+            },
+            {
+                "name": "IRIX",
+                "index": 69
+            },
+            {
+                "name": "Linux",
+                "index": 70
+            },
+            {
+                "name": "Solaris",
+                "index": 71
+            },
+            {
+                "name": "WindowsNT操作系统",
+                "index": 72
+            },
+            {
+                "name": "网格",
+                "index": 73
+            },
+            {
+                "name": "网格计算",
+                "index": 74
+            },
+            {
+                "name": "超级计算机",
+                "index": 54
+            },
+            {
+                "name": "机群",
+                "index": 75
+            },
+            {
+                "name": "存储系统",
+                "index": 76
+            },
+            {
+                "name": "工作站",
+                "index": 68
+            },
+            {
+                "name": "蒙特利尔",
+                "index": 77
+            },
+            {
+                "name": "网格",
+                "index": 73
+            },
+            {
+                "name": "DVR",
+                "index": 78
+            },
+            {
+                "name": "NVR",
+                "index": 79
+            },
+            {
+                "name": "媒体服务器",
+                "index": 80
+            },
+            {
+                "name": "IP地址",
+                "index": 81
+            },
+            {
+                "name": "端口号",
+                "index": 82
+            },
+            {
+                "name": "地理信息服务",
+                "index": 83
+            },
+            {
+                "name": "PTZ控制",
+                "index": 84
+            },
+            {
+                "name": "视频监控系统",
+                "index": 85
+            },
+            {
+                "name": "网络视频服务器",
+                "index": 86
+            },
+            {
+                "name": "数字硬盘录像机",
+                "index": 87
+            },
+            {
+                "name": "PTZ控制",
+                "index": 84
+            },
+            {
+                "name": "视音频信息",
+                "index": 88
+            },
+            {
+                "name": "PTZ",
+                "index": 89
+            },
+            {
+                "name": "设备间",
+                "index": 90
+            },
+            {
+                "name": "电视墙",
+                "index": 91
+            }
+        ],
+        "parents": [
+            [
+                [
+                    "index",
+                    0
+                ],
+                [
+                    "name",
+                    "知识图谱"
+                ]
+            ]
+        ],
+        "contents": "完整的地理空间信息可视化概念主要包括科学计算可视化、数据可视化和信息可视化。地理空间信息可视化技术的核心是为使用者提供空间信息直观的、可交互的可视化环境。 [1]",
         "basic_info": {
             "中文名": "可视化技术",
             "类    型": "数据学术语"
@@ -86,10 +519,30 @@
     },
     {
         "name": "知识资源",
-        "contents": "知识资源是通过智力劳动发现和创造的，进入经济系统的人类知识。知识经物化可为人类带来巨大财富，可促进物质生产，从而产生市场价值，也可直接作为精神消费对象。企业的知识资源是指企业拥有的可以反复利用的，建立在知识和信息技术基础上的，能给企业带来财富增长的资源。包括三个方面：（1）企业创造和拥有的无形资产。如企业文化、品牌、信誉、渠道等市场方面的无形资产，专利、版权、技术诀窍、商业秘密等知识产权，技术流程、管理流程、管理模式与方法、信息网络等组织管理资产。（2）信息资源。通过信息网络可以收集到的与企业生产经营有关的各种信息。（3）智力资源。企业可以利用的、存在于企业人力资源中的各种知识和创造性地运用知识的能力。 [1]",
-        "children": [],
-        "parents": [],
         "URL": "https://baike.baidu.com/item/%E7%9F%A5%E8%AF%86%E8%B5%84%E6%BA%90/2336050",
+        "children": [
+            {
+                "name": "培根",
+                "index": 92
+            },
+            {
+                "name": "后工业化",
+                "index": 93
+            }
+        ],
+        "parents": [
+            [
+                [
+                    "index",
+                    0
+                ],
+                [
+                    "name",
+                    "知识图谱"
+                ]
+            ]
+        ],
+        "contents": "知识资源是通过智力劳动发现和创造的，进入经济系统的人类知识。知识经物化可为人类带来巨大财富，可促进物质生产，从而产生市场价值，也可直接作为精神消费对象。企业的知识资源是指企业拥有的可以反复利用的，建立在知识和信息技术基础上的，能给企业带来财富增长的资源。包括三个方面：（1）企业创造和拥有的无形资产。如企业文化、品牌、信誉、渠道等市场方面的无形资产，专利、版权、技术诀窍、商业秘密等知识产权，技术流程、管理流程、管理模式与方法、信息网络等组织管理资产。（2）信息资源。通过信息网络可以收集到的与企业生产经营有关的各种信息。（3）智力资源。企业可以利用的、存在于企业人力资源中的各种知识和创造性地运用知识的能力。 [1]",
         "basic_info": {
             "中文名": "知识资源",
             "功    能": "给社会带来财富增长",
@@ -113,10 +566,358 @@
     },
     {
         "name": "应用数学",
-        "contents": "应用数学（Applied Mathematics）是应用目的明确的数学理论和方法的总称，研究如何应用数学知识到其它范畴（尤其是科学）的数学分枝，可以说是纯数学的相反。包括微分方程、向量分析、矩阵、傅里叶变换、复变分析、数值方法、概率论、数理统计、运筹学、控制理论、组合数学、信息论等许多数学分支，也包括从各种应用领域中提出的数学问题的研究。计算数学有时也可视为应用数学的一部分。",
-        "children": [],
-        "parents": [],
         "URL": "https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E6%95%B0%E5%AD%A6/2236",
+        "children": [
+            {
+                "name": "微分方程",
+                "index": 94
+            },
+            {
+                "name": "向量分析",
+                "index": 95
+            },
+            {
+                "name": "傅里叶变换",
+                "index": 96
+            },
+            {
+                "name": "数值方法",
+                "index": 97
+            },
+            {
+                "name": "概率论",
+                "index": 98
+            },
+            {
+                "name": "数理统计",
+                "index": 99
+            },
+            {
+                "name": "控制理论",
+                "index": 100
+            },
+            {
+                "name": "组合数学",
+                "index": 101
+            },
+            {
+                "name": "信息论",
+                "index": 102
+            },
+            {
+                "name": "应用领域",
+                "index": 103
+            },
+            {
+                "name": "计算数学",
+                "index": 104
+            },
+            {
+                "name": "工程学",
+                "index": 105
+            },
+            {
+                "name": "软件工程师",
+                "index": 106
+            },
+            {
+                "name": "相关课程",
+                "index": 107
+            },
+            {
+                "name": "人类活动",
+                "index": 108
+            },
+            {
+                "name": "自然规律",
+                "index": 109
+            },
+            {
+                "name": "微分方程",
+                "index": 94
+            },
+            {
+                "name": "计算数学",
+                "index": 110
+            },
+            {
+                "name": "地质学家",
+                "index": 111
+            },
+            {
+                "name": "数学方法",
+                "index": 112
+            },
+            {
+                "name": "深度了解",
+                "index": 113
+            },
+            {
+                "name": "大数学家",
+                "index": 114
+            },
+            {
+                "name": "欧拉",
+                "index": 115
+            },
+            {
+                "name": "柯西",
+                "index": 116
+            },
+            {
+                "name": "物理学",
+                "index": 117
+            },
+            {
+                "name": "拉普拉斯方程",
+                "index": 118
+            },
+            {
+                "name": "逻辑思维",
+                "index": 119
+            },
+            {
+                "name": "自然现象",
+                "index": 120
+            },
+            {
+                "name": "高等数学",
+                "index": 121
+            },
+            {
+                "name": "航空工业",
+                "index": 122
+            },
+            {
+                "name": "应用力学",
+                "index": 123
+            },
+            {
+                "name": "应用范围",
+                "index": 124
+            },
+            {
+                "name": "问题解决",
+                "index": 125
+            },
+            {
+                "name": "九章算术",
+                "index": 126
+            },
+            {
+                "name": "中国古代数学",
+                "index": 127
+            },
+            {
+                "name": "新阶段",
+                "index": 128
+            },
+            {
+                "name": "纯粹数学",
+                "index": 129
+            },
+            {
+                "name": "哥德巴赫猜想",
+                "index": 130
+            },
+            {
+                "name": "费马大定理",
+                "index": 131
+            },
+            {
+                "name": "非欧几何",
+                "index": 132
+            },
+            {
+                "name": "拓扑学",
+                "index": 133
+            },
+            {
+                "name": "陈省身",
+                "index": 134
+            },
+            {
+                "name": "纤维丛理论",
+                "index": 135
+            },
+            {
+                "name": "杨振宁",
+                "index": 136
+            },
+            {
+                "name": "规范场",
+                "index": 137
+            },
+            {
+                "name": "数学工具",
+                "index": 138
+            },
+            {
+                "name": "社会发展",
+                "index": 139
+            },
+            {
+                "name": "推动力",
+                "index": 140
+            },
+            {
+                "name": "牛顿",
+                "index": 141
+            },
+            {
+                "name": "微积分",
+                "index": 142
+            },
+            {
+                "name": "数学方法",
+                "index": 143
+            },
+            {
+                "name": "海王星",
+                "index": 144
+            },
+            {
+                "name": "蒸汽机",
+                "index": 145
+            },
+            {
+                "name": "运动学",
+                "index": 146
+            },
+            {
+                "name": "热力学",
+                "index": 147
+            },
+            {
+                "name": "电磁学",
+                "index": 148
+            },
+            {
+                "name": "微分方程",
+                "index": 94
+            },
+            {
+                "name": "航天器",
+                "index": 149
+            },
+            {
+                "name": "CT",
+                "index": 150
+            },
+            {
+                "name": "医疗设备",
+                "index": 151
+            },
+            {
+                "name": "数学概念",
+                "index": 152
+            },
+            {
+                "name": "百分数",
+                "index": 153
+            },
+            {
+                "name": "平均数",
+                "index": 154
+            },
+            {
+                "name": "社会生活",
+                "index": 155
+            },
+            {
+                "name": "人口增长率",
+                "index": 156
+            },
+            {
+                "name": "统计图",
+                "index": 157
+            },
+            {
+                "name": "趋势图",
+                "index": 158
+            },
+            {
+                "name": "传播媒介",
+                "index": 159
+            },
+            {
+                "name": "数学素养",
+                "index": 160
+            },
+            {
+                "name": "数学教育",
+                "index": 161
+            },
+            {
+                "name": "教学过程",
+                "index": 162
+            },
+            {
+                "name": "平面几何",
+                "index": 163
+            },
+            {
+                "name": "逻辑推理",
+                "index": 164
+            },
+            {
+                "name": "行程问题",
+                "index": 165
+            },
+            {
+                "name": "平行四边形",
+                "index": 166
+            },
+            {
+                "name": "筛子",
+                "index": 167
+            },
+            {
+                "name": "高能物理",
+                "index": 168
+            },
+            {
+                "name": "丘成桐",
+                "index": 169
+            },
+            {
+                "name": "爱因斯坦",
+                "index": 170
+            },
+            {
+                "name": "开普勒",
+                "index": 171
+            },
+            {
+                "name": "认知领域",
+                "index": 172
+            },
+            {
+                "name": "康德",
+                "index": 173
+            },
+            {
+                "name": "周海中",
+                "index": 174
+            },
+            {
+                "name": "马克思",
+                "index": 175
+            }
+        ],
+        "parents": [
+            [
+                [
+                    "index",
+                    0
+                ],
+                [
+                    "name",
+                    "知识图谱"
+                ]
+            ]
+        ],
+        "contents": "应用数学（Applied Mathematics）是应用目的明确的数学理论和方法的总称，研究如何应用数学知识到其它范畴（尤其是科学）的数学分枝，可以说是纯数学的相反。包括微分方程、向量分析、矩阵、傅里叶变换、复变分析、数值方法、概率论、数理统计、运筹学、控制理论、组合数学、信息论等许多数学分支，也包括从各种应用领域中提出的数学问题的研究。计算数学有时也可视为应用数学的一部分。",
         "basic_info": {
             "中文名": "应用数学",
             "外文名": "Applied Mathematics",
@@ -133,115 +934,1907 @@
     },
     {
         "name": "信息科学",
-        "contents": "信息科学是研究信息运动规律和应用方法的科学，是由信息论、控制论、计算机理论、人工智能理论和系统论相互渗透、相互结合而成的一门新兴综合性科学。其支柱为信息论、系统论和控制论。信息技术就是能够扩展人的信息器官功能的一类技术。",
-        "children": [],
-        "parents": [],
         "URL": "https://baike.baidu.com/item/%E4%BF%A1%E6%81%AF%E7%A7%91%E5%AD%A6/1296011",
-        "basic_info": {
-            "中文名": "信息科学",
-            "外文名": "Information Science",
-            "拼    音": "xìn xī kē xué",
-            "注    音": "ㄒㄧㄣˋ ㄒㄧㄎㄜ ㄒㄩㄝˊ"
-        },
-        "catalog": [
-            "    定义",
-            "    基本理论",
-            "    信息论",
-            "    控制论",
-            "    系统论",
-            "    研究内容",
-            "    课题方向",
-            "    课题内容",
-            "    发展简况",
-            "    重要意义",
-            "    机器智能"
-        ],
-        "content_paragraphs": [],
-        "references": [
+        "children": [],
+        "parents": [
             {
-                "title": "信息科学概论",
-                "url": "https://baike.baidu.com/reference/1296011/533aYdO6cr3_z3kATPHYxfXzMHvANIv66rXUVuBzzqIP0XOpX4vrUZ184tY2-uIpFwTG_45rZcFawLGuCUgR6_JGcexhEbcqnCP6UGKUyb634YF1x40",
-                "source": "1",
-                "date": "．百度文库"
+                "name": "知识图谱",
+                "index": 0
             }
         ]
     },
     {
         "name": "引文分析",
-        "contents": "引文分析（Citation Analysis）是利用数学及统计学的方法和比较、归纳、抽象、概括等逻辑方法，对科学期刊、论文、著者等各种分析对象的引证与被引证现象进行分析，进而揭示其中的数量特征和内在规律的一种文献计量分析方法。",
-        "children": [],
-        "parents": [],
         "URL": "https://baike.baidu.com/item/%E5%BC%95%E6%96%87%E5%88%86%E6%9E%90/6892836",
-        "basic_info": {
-            "中文名": "引文分析",
-            "外文名": "Citation analysis",
-            "运    用": "各种数学及统计学的方法",
-            "性    质": "逻辑方法"
-        },
-        "catalog": [
-            "    方法简介",
-            "    类型",
-            "    主要内容",
-            "    常见特点",
-            "    广泛适用性",
-            "    简便易用性",
-            "    功能特异性",
-            "    局限",
-            "    测度指标",
-            "    应用领域"
-        ],
-        "content_paragraphs": [],
-        "references": []
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
     },
     {
         "name": "共现分析",
-        "contents": "共现分析（co-occurrence analysis）是2019年公布的图书馆·情报与文献学名词，出自《图书馆·情报与文献学名词》第一版。",
-        "children": [],
-        "parents": [],
         "URL": "https://baike.baidu.com/item/%E5%85%B1%E7%8E%B0%E5%88%86%E6%9E%90/2603936",
-        "basic_info": {
-            "中文名": "共现分析",
-            "外文名": "co-occurrence analysis",
-            "所属学科": "图书馆·情报与文献学",
-            "公布时间": "2019年"
-        },
-        "catalog": [
-            "    定义",
-            "    出处"
-        ],
-        "content_paragraphs": [],
-        "references": [
+        "children": [],
+        "parents": [
             {
-                "title": "共现分析",
-                "url": "https://baike.baidu.com/reference/2603936/533aYdO6cr3_z3kATPPZyK_0MyvAP9n-7ObbWrtzzqIP0XOpX5nyFJw38tow8PtuGg6Fs5YtbN8GgqaiThZKtfrFxGzi_DX3JcAp_ZM",
-                "source": "1",
-                "date": "．术语在线"
+                "name": "知识图谱",
+                "index": 0
             }
         ]
     },
     {
         "name": "知识架构",
-        "contents": "知识架构（knowledge architecture ）是2016年公布的管理科学技术名词。",
-        "children": [],
-        "parents": [],
         "URL": "https://baike.baidu.com/item/%E7%9F%A5%E8%AF%86%E6%9E%B6%E6%9E%84/56528464",
-        "basic_info": {
-            "中文名": "知识架构",
-            "外文名": "knowledge architecture",
-            "所属学科": "管理科学技术",
-            "公布时间": "2016年"
-        },
-        "catalog": [
-            "    定义",
-            "    出处"
-        ],
-        "content_paragraphs": [],
-        "references": [
+        "children": [],
+        "parents": [
             {
-                "title": "知识架构",
-                "url": "https://baike.baidu.com/reference/56528464/533aYdO6cr3_z3kATPeJmf3xZHrGNNv97baAWrtzzqIPmGapB5nyTcYm5cUy8flrHQXO_ptsL8UQl_qpUkQe4yC_5DWq9GOMG6BR5w",
-                "source": "1",
-                "date": "．术语在线"
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "多学科融合",
+        "URL": "https://baike.baidu.com/item/%E5%A4%9A%E5%AD%A6%E7%A7%91%E8%9E%8D%E5%90%88/23737276",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "知识领域",
+        "URL": "https://baike.baidu.com/item/%E7%9F%A5%E8%AF%86%E9%A2%86%E5%9F%9F/56528760",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "数据挖掘",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/216477",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "知识计量",
+        "URL": "https://baike.baidu.com/item/%E7%9F%A5%E8%AF%86%E8%AE%A1%E9%87%8F/8987223",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "发达国家",
+        "URL": "https://baike.baidu.com/item/%E5%8F%91%E8%BE%BE%E5%9B%BD%E5%AE%B6/651897",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "搜索引擎",
+        "URL": "https://baike.baidu.com/item/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/104812",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "字串",
+        "URL": "https://baike.baidu.com/item/%E5%AD%97%E4%B8%B2/4832059",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "连贯性",
+        "URL": "https://baike.baidu.com/item/%E8%BF%9E%E8%B4%AF%E6%80%A7/3151057",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "知识体系",
+        "URL": "https://baike.baidu.com/item/%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/56529057",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "公共资源",
+        "URL": "https://baike.baidu.com/item/%E5%85%AC%E5%85%B1%E8%B5%84%E6%BA%90/2760349",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "文本分析",
+        "URL": "https://baike.baidu.com/item/%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/11046544",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "风险控制",
+        "URL": "https://baike.baidu.com/item/%E9%A3%8E%E9%99%A9%E6%8E%A7%E5%88%B6/1861",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识图谱",
+                "index": 0
+            }
+        ]
+    },
+    {
+        "name": "软件需求",
+        "URL": "https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识域",
+                "index": 1
+            }
+        ]
+    },
+    {
+        "name": "软件维护",
+        "URL": "https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E7%BB%B4%E6%8A%A4/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识域",
+                "index": 1
+            }
+        ]
+    },
+    {
+        "name": "软件工程过程",
+        "URL": "https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%BF%87%E7%A8%8B/361675",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识域",
+                "index": 1
+            }
+        ]
+    },
+    {
+        "name": "软件质量",
+        "URL": "https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识域",
+                "index": 1
+            }
+        ]
+    },
+    {
+        "name": "名词",
+        "URL": "https://baike.baidu.com/item/%E5%90%8D%E8%AF%8D/502047",
+        "children": [],
+        "parents": [
+            {
+                "name": "结构关系",
+                "index": 2
+            }
+        ]
+    },
+    {
+        "name": "代词",
+        "URL": "https://baike.baidu.com/item/%E4%BB%A3%E8%AF%8D/87578",
+        "children": [],
+        "parents": [
+            {
+                "name": "结构关系",
+                "index": 2
+            }
+        ]
+    },
+    {
+        "name": "动词",
+        "URL": "https://baike.baidu.com/item/%E5%8A%A8%E8%AF%8D/502192",
+        "children": [],
+        "parents": [
+            {
+                "name": "结构关系",
+                "index": 2
+            }
+        ]
+    },
+    {
+        "name": "形容词",
+        "URL": "https://baike.baidu.com/item/%E5%BD%A2%E5%AE%B9%E8%AF%8D/1523689",
+        "children": [],
+        "parents": [
+            {
+                "name": "结构关系",
+                "index": 2
+            }
+        ]
+    },
+    {
+        "name": "科学计算可视化",
+        "URL": "https://baike.baidu.com/item/%E7%A7%91%E5%AD%A6%E8%AE%A1%E7%AE%97%E5%8F%AF%E8%A7%86%E5%8C%96/3731175",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "信息源",
+        "URL": "https://baike.baidu.com/item/%E4%BF%A1%E6%81%AF%E6%BA%90/10812948",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "工程计算",
+        "URL": "https://baike.baidu.com/item/%E5%B7%A5%E7%A8%8B%E8%AE%A1%E7%AE%97/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "科学可视化",
+        "URL": "https://baike.baidu.com/item/%E7%A7%91%E5%AD%A6%E5%8F%AF%E8%A7%86%E5%8C%96/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "飞行模拟",
+        "URL": "https://baike.baidu.com/item/%E9%A3%9E%E8%A1%8C%E6%A8%A1%E6%8B%9F/4355632",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "建模",
+        "URL": "https://baike.baidu.com/item/%E5%BB%BA%E6%A8%A1/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "渲染",
+        "URL": "https://baike.baidu.com/item/%E6%B8%B2%E6%9F%93/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "光亮度",
+        "URL": "https://baike.baidu.com/item/%E5%85%89%E4%BA%AE%E5%BA%A6/1073510",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "颜色值",
+        "URL": "https://baike.baidu.com/item/%E9%A2%9C%E8%89%B2%E5%80%BC/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "图形工作站",
+        "URL": "https://baike.baidu.com/item/%E5%9B%BE%E5%BD%A2%E5%B7%A5%E4%BD%9C%E7%AB%99/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            },
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "人机交互界面",
+        "URL": "https://baike.baidu.com/item/%E4%BA%BA%E6%9C%BA%E4%BA%A4%E4%BA%92%E7%95%8C%E9%9D%A2/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "存储器",
+        "URL": "https://baike.baidu.com/item/%E5%AD%98%E5%82%A8%E5%99%A8/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "图形卡",
+        "URL": "https://baike.baidu.com/item/%E5%9B%BE%E5%BD%A2%E5%8D%A1/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "视频处理",
+        "URL": "https://baike.baidu.com/item/%E8%A7%86%E9%A2%91%E5%A4%84%E7%90%86/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "主存储器",
+        "URL": "https://baike.baidu.com/item/%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "图形系统",
+        "URL": "https://baike.baidu.com/item/%E5%9B%BE%E5%BD%A2%E7%B3%BB%E7%BB%9F/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            },
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "交叉开关",
+        "URL": "https://baike.baidu.com/item/%E4%BA%A4%E5%8F%89%E5%BC%80%E5%85%B3/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "Crossbar",
+        "URL": "https://baike.baidu.com/item/Crossbar/3671317",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "交互性",
+        "URL": "https://baike.baidu.com/item/%E4%BA%A4%E4%BA%92%E6%80%A7/10758528",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "硬件加速",
+        "URL": "https://baike.baidu.com/item/%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "RGBA",
+        "URL": "https://baike.baidu.com/item/RGBA/3674658",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "双头显示",
+        "URL": "https://baike.baidu.com/item/%E5%8F%8C%E5%A4%B4%E6%98%BE%E7%A4%BA/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "路由器",
+        "URL": "https://baike.baidu.com/item/%E8%B7%AF%E7%94%B1%E5%99%A8/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "体系结构",
+        "URL": "https://baike.baidu.com/item/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "超级计算机",
+        "URL": "https://baike.baidu.com/item/%E8%B6%85%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            },
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "软件开发工具",
+        "URL": "https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "人员设计",
+        "URL": "https://baike.baidu.com/item/%E4%BA%BA%E5%91%98%E8%AE%BE%E8%AE%A1/12747573",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "OpenGL",
+        "URL": "https://baike.baidu.com/item/OpenGL/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "应用程序接口",
+        "URL": "https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%8E%A5%E5%8F%A3/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "OpenGL",
+        "URL": "https://baike.baidu.com/item/OpenGL/238984",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "三维动画软件",
+        "URL": "https://baike.baidu.com/item/%E4%B8%89%E7%BB%B4%E5%8A%A8%E7%94%BB%E8%BD%AF%E4%BB%B6/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "PTC",
+        "URL": "https://baike.baidu.com/item/PTC/13214006",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "视景仿真",
+        "URL": "https://baike.baidu.com/item/%E8%A7%86%E6%99%AF%E4%BB%BF%E7%9C%9F/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "服务器软件",
+        "URL": "https://baike.baidu.com/item/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BD%AF%E4%BB%B6/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "可视化计算",
+        "URL": "https://baike.baidu.com/item/%E5%8F%AF%E8%A7%86%E5%8C%96%E8%AE%A1%E7%AE%97/2393790",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            },
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "解压缩",
+        "URL": "https://baike.baidu.com/item/%E8%A7%A3%E5%8E%8B%E7%BC%A9/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "控制流",
+        "URL": "https://baike.baidu.com/item/%E6%8E%A7%E5%88%B6%E6%B5%81/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "数据流",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E6%B5%81/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "工作站",
+        "URL": "https://baike.baidu.com/item/%E5%B7%A5%E4%BD%9C%E7%AB%99/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            },
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "IRIX",
+        "URL": "https://baike.baidu.com/item/IRIX/10240428",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "Linux",
+        "URL": "https://baike.baidu.com/item/Linux/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "Solaris",
+        "URL": "https://baike.baidu.com/item/Solaris/3517",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "WindowsNT操作系统",
+        "URL": "https://baike.baidu.com/item/WindowsNT%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/4185719",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "网格",
+        "URL": "https://baike.baidu.com/item/%E7%BD%91%E6%A0%BC/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            },
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "网格计算",
+        "URL": "https://baike.baidu.com/item/%E7%BD%91%E6%A0%BC%E8%AE%A1%E7%AE%97/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "机群",
+        "URL": "https://baike.baidu.com/item/%E6%9C%BA%E7%BE%A4/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "存储系统",
+        "URL": "https://baike.baidu.com/item/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "蒙特利尔",
+        "URL": "https://baike.baidu.com/item/%E8%92%99%E7%89%B9%E5%88%A9%E5%B0%94/80820",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "DVR",
+        "URL": "https://baike.baidu.com/item/DVR/99495",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "NVR",
+        "URL": "https://baike.baidu.com/item/NVR/4404861",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "媒体服务器",
+        "URL": "https://baike.baidu.com/item/%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/3334644",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "IP地址",
+        "URL": "https://baike.baidu.com/item/IP%E5%9C%B0%E5%9D%80/150859",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "端口号",
+        "URL": "https://baike.baidu.com/item/%E7%AB%AF%E5%8F%A3%E5%8F%B7/10883658",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "地理信息服务",
+        "URL": "https://baike.baidu.com/item/%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF%E6%9C%8D%E5%8A%A1/5154438",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "PTZ控制",
+        "URL": "https://baike.baidu.com/item/PTZ%E6%8E%A7%E5%88%B6/6237994",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            },
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "视频监控系统",
+        "URL": "https://baike.baidu.com/item/%E8%A7%86%E9%A2%91%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/7853158",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "网络视频服务器",
+        "URL": "https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E8%A7%86%E9%A2%91%E6%9C%8D%E5%8A%A1%E5%99%A8/2508166",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "数字硬盘录像机",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E5%AD%97%E7%A1%AC%E7%9B%98%E5%BD%95%E5%83%8F%E6%9C%BA/471889",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "视音频信息",
+        "URL": "https://baike.baidu.com/item/%E8%A7%86%E9%9F%B3%E9%A2%91%E4%BF%A1%E6%81%AF/3266879",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "PTZ",
+        "URL": "https://baike.baidu.com/item/PTZ/3478717",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "设备间",
+        "URL": "https://baike.baidu.com/item/%E8%AE%BE%E5%A4%87%E9%97%B4/9034636",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "电视墙",
+        "URL": "https://baike.baidu.com/item/%E7%94%B5%E8%A7%86%E5%A2%99/10379970",
+        "children": [],
+        "parents": [
+            {
+                "name": "可视化技术",
+                "index": 3
+            }
+        ]
+    },
+    {
+        "name": "培根",
+        "URL": "https://baike.baidu.com/item/%E5%9F%B9%E6%A0%B9/1501",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识资源",
+                "index": 4
+            }
+        ]
+    },
+    {
+        "name": "后工业化",
+        "URL": "https://baike.baidu.com/item/%E5%90%8E%E5%B7%A5%E4%B8%9A%E5%8C%96/3073911",
+        "children": [],
+        "parents": [
+            {
+                "name": "知识资源",
+                "index": 4
+            }
+        ]
+    },
+    {
+        "name": "微分方程",
+        "URL": "https://baike.baidu.com/item/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/4763",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            },
+            {
+                "name": "应用数学",
+                "index": 5
+            },
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "向量分析",
+        "URL": "https://baike.baidu.com/item/%E5%90%91%E9%87%8F%E5%88%86%E6%9E%90/10564843",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "傅里叶变换",
+        "URL": "https://baike.baidu.com/item/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/7119029",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "数值方法",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E5%80%BC%E6%96%B9%E6%B3%95/5129326",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "概率论",
+        "URL": "https://baike.baidu.com/item/%E6%A6%82%E7%8E%87%E8%AE%BA/829122",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "数理统计",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/408183",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "控制理论",
+        "URL": "https://baike.baidu.com/item/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA/9252737",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "组合数学",
+        "URL": "https://baike.baidu.com/item/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/821134",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "信息论",
+        "URL": "https://baike.baidu.com/item/%E4%BF%A1%E6%81%AF%E8%AE%BA/302185",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "应用领域",
+        "URL": "https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F/9840690",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "计算数学",
+        "URL": "https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%95%B0%E5%AD%A6/660068",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "工程学",
+        "URL": "https://baike.baidu.com/item/%E5%B7%A5%E7%A8%8B%E5%AD%A6/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "软件工程师",
+        "URL": "https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88/836275",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "相关课程",
+        "URL": "https://baike.baidu.com/item/%E7%9B%B8%E5%85%B3%E8%AF%BE%E7%A8%8B/5533035",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "人类活动",
+        "URL": "https://baike.baidu.com/item/%E4%BA%BA%E7%B1%BB%E6%B4%BB%E5%8A%A8/9704094",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "自然规律",
+        "URL": "https://baike.baidu.com/item/%E8%87%AA%E7%84%B6%E8%A7%84%E5%BE%8B/4995412",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "计算数学",
+        "URL": "https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%95%B0%E5%AD%A6/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "地质学家",
+        "URL": "https://baike.baidu.com/item/%E5%9C%B0%E8%B4%A8%E5%AD%A6%E5%AE%B6/7485657",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "数学方法",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "深度了解",
+        "URL": "https://baike.baidu.com/item/%E6%B7%B1%E5%BA%A6%E4%BA%86%E8%A7%A3/6716507",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "大数学家",
+        "URL": "https://baike.baidu.com/item/%E5%A4%A7%E6%95%B0%E5%AD%A6%E5%AE%B6/9575278",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "欧拉",
+        "URL": "https://baike.baidu.com/item/%E6%AC%A7%E6%8B%89/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "柯西",
+        "URL": "https://baike.baidu.com/item/%E6%9F%AF%E8%A5%BF/433717",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "物理学",
+        "URL": "https://baike.baidu.com/item/%E7%89%A9%E7%90%86%E5%AD%A6/313183",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "拉普拉斯方程",
+        "URL": "https://baike.baidu.com/item/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E6%96%B9%E7%A8%8B/643164",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "逻辑思维",
+        "URL": "https://baike.baidu.com/item/%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "自然现象",
+        "URL": "https://baike.baidu.com/item/%E8%87%AA%E7%84%B6%E7%8E%B0%E8%B1%A1/7473030",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "高等数学",
+        "URL": "https://baike.baidu.com/item/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/1182",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "航空工业",
+        "URL": "https://baike.baidu.com/item/%E8%88%AA%E7%A9%BA%E5%B7%A5%E4%B8%9A/4857290",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "应用力学",
+        "URL": "https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E5%8A%9B%E5%AD%A6/22045",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "应用范围",
+        "URL": "https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E8%8C%83%E5%9B%B4/12722383",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "问题解决",
+        "URL": "https://baike.baidu.com/item/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/10903575",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "九章算术",
+        "URL": "https://baike.baidu.com/item/%E4%B9%9D%E7%AB%A0%E7%AE%97%E6%9C%AF/348232",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "中国古代数学",
+        "URL": "https://baike.baidu.com/item/%E4%B8%AD%E5%9B%BD%E5%8F%A4%E4%BB%A3%E6%95%B0%E5%AD%A6/4124209",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "新阶段",
+        "URL": "https://baike.baidu.com/item/%E6%96%B0%E9%98%B6%E6%AE%B5/14693160",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "纯粹数学",
+        "URL": "https://baike.baidu.com/item/%E7%BA%AF%E7%B2%B9%E6%95%B0%E5%AD%A6/2785306",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "哥德巴赫猜想",
+        "URL": "https://baike.baidu.com/item/%E5%93%A5%E5%BE%B7%E5%B7%B4%E8%B5%AB%E7%8C%9C%E6%83%B3/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "费马大定理",
+        "URL": "https://baike.baidu.com/item/%E8%B4%B9%E9%A9%AC%E5%A4%A7%E5%AE%9A%E7%90%86/80363",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "非欧几何",
+        "URL": "https://baike.baidu.com/item/%E9%9D%9E%E6%AC%A7%E5%87%A0%E4%BD%95/345351",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "拓扑学",
+        "URL": "https://baike.baidu.com/item/%E6%8B%93%E6%89%91%E5%AD%A6/769248",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "陈省身",
+        "URL": "https://baike.baidu.com/item/%E9%99%88%E7%9C%81%E8%BA%AB/602147",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "纤维丛理论",
+        "URL": "https://baike.baidu.com/item/%E7%BA%A4%E7%BB%B4%E4%B8%9B%E7%90%86%E8%AE%BA/792693",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "杨振宁",
+        "URL": "https://baike.baidu.com/item/%E6%9D%A8%E6%8C%AF%E5%AE%81/121170",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "规范场",
+        "URL": "https://baike.baidu.com/item/%E8%A7%84%E8%8C%83%E5%9C%BA/4879575",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "数学工具",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E5%AD%A6%E5%B7%A5%E5%85%B7/903000",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "社会发展",
+        "URL": "https://baike.baidu.com/item/%E7%A4%BE%E4%BC%9A%E5%8F%91%E5%B1%95/28519",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "推动力",
+        "URL": "https://baike.baidu.com/item/%E6%8E%A8%E5%8A%A8%E5%8A%9B/1671530",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "牛顿",
+        "URL": "https://baike.baidu.com/item/%E7%89%9B%E9%A1%BF/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "微积分",
+        "URL": "https://baike.baidu.com/item/%E5%BE%AE%E7%A7%AF%E5%88%86/6065",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "数学方法",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E5%AD%A6%E6%96%B9%E6%B3%95/1747958",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "海王星",
+        "URL": "https://baike.baidu.com/item/%E6%B5%B7%E7%8E%8B%E6%98%9F/30351",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "蒸汽机",
+        "URL": "https://baike.baidu.com/item/%E8%92%B8%E6%B1%BD%E6%9C%BA/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "运动学",
+        "URL": "https://baike.baidu.com/item/%E8%BF%90%E5%8A%A8%E5%AD%A6/650696",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "热力学",
+        "URL": "https://baike.baidu.com/item/%E7%83%AD%E5%8A%9B%E5%AD%A6/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "电磁学",
+        "URL": "https://baike.baidu.com/item/%E7%94%B5%E7%A3%81%E5%AD%A6/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "航天器",
+        "URL": "https://baike.baidu.com/item/%E8%88%AA%E5%A4%A9%E5%99%A8/3514266",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "CT",
+        "URL": "https://baike.baidu.com/item/CT/122415",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "医疗设备",
+        "URL": "https://baike.baidu.com/item/%E5%8C%BB%E7%96%97%E8%AE%BE%E5%A4%87/5007179",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "数学概念",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E5%AD%A6%E6%A6%82%E5%BF%B5/8498178",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "百分数",
+        "URL": "https://baike.baidu.com/item/%E7%99%BE%E5%88%86%E6%95%B0/755802",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "平均数",
+        "URL": "https://baike.baidu.com/item/%E5%B9%B3%E5%9D%87%E6%95%B0/11031224",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "社会生活",
+        "URL": "https://baike.baidu.com/item/%E7%A4%BE%E4%BC%9A%E7%94%9F%E6%B4%BB/9324529",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "人口增长率",
+        "URL": "https://baike.baidu.com/item/%E4%BA%BA%E5%8F%A3%E5%A2%9E%E9%95%BF%E7%8E%87/3457199",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "统计图",
+        "URL": "https://baike.baidu.com/item/%E7%BB%9F%E8%AE%A1%E5%9B%BE/4027009",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "趋势图",
+        "URL": "https://baike.baidu.com/item/%E8%B6%8B%E5%8A%BF%E5%9B%BE/11010463",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "传播媒介",
+        "URL": "https://baike.baidu.com/item/%E4%BC%A0%E6%92%AD%E5%AA%92%E4%BB%8B/8394646",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "数学素养",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E5%AD%A6%E7%B4%A0%E5%85%BB/3061197",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "数学教育",
+        "URL": "https://baike.baidu.com/item/%E6%95%B0%E5%AD%A6%E6%95%99%E8%82%B2/8408338",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "教学过程",
+        "URL": "https://baike.baidu.com/item/%E6%95%99%E5%AD%A6%E8%BF%87%E7%A8%8B/5708103",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "平面几何",
+        "URL": "https://baike.baidu.com/item/%E5%B9%B3%E9%9D%A2%E5%87%A0%E4%BD%95/8046989",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "逻辑推理",
+        "URL": "https://baike.baidu.com/item/%E9%80%BB%E8%BE%91%E6%8E%A8%E7%90%86/2419495",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "行程问题",
+        "URL": "https://baike.baidu.com/item/%E8%A1%8C%E7%A8%8B%E9%97%AE%E9%A2%98/928268",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "平行四边形",
+        "URL": "https://baike.baidu.com/item/%E5%B9%B3%E8%A1%8C%E5%9B%9B%E8%BE%B9%E5%BD%A2/2250730",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "筛子",
+        "URL": "https://baike.baidu.com/item/%E7%AD%9B%E5%AD%90/6609051",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "高能物理",
+        "URL": "https://baike.baidu.com/item/%E9%AB%98%E8%83%BD%E7%89%A9%E7%90%86/4172377",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "丘成桐",
+        "URL": "https://baike.baidu.com/item/%E4%B8%98%E6%88%90%E6%A1%90/638825",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "爱因斯坦",
+        "URL": "https://baike.baidu.com/item/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6/0",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "开普勒",
+        "URL": "https://baike.baidu.com/item/%E5%BC%80%E6%99%AE%E5%8B%92/158768",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "认知领域",
+        "URL": "https://baike.baidu.com/item/%E8%AE%A4%E7%9F%A5%E9%A2%86%E5%9F%9F/50887597",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "康德",
+        "URL": "https://baike.baidu.com/item/%E5%BA%B7%E5%BE%B7/5618",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "周海中",
+        "URL": "https://baike.baidu.com/item/%E5%91%A8%E6%B5%B7%E4%B8%AD/8755811",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
+            }
+        ]
+    },
+    {
+        "name": "马克思",
+        "URL": "https://baike.baidu.com/item/%E9%A9%AC%E5%85%8B%E6%80%9D/161976",
+        "children": [],
+        "parents": [
+            {
+                "name": "应用数学",
+                "index": 5
             }
         ]
     }

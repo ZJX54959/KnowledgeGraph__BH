@@ -1,10 +1,12 @@
 # Construct Knowledge Graph from HTML Elements
+from ast import arg
 import os
 import re
 import json
 from bs4 import BeautifulSoup
 from web_crawler import WebCrawler
 from knowledge_extractor import KnowledgeExtractor
+import argparse
 
 class KnowledgeGraphConstructor:
     def __init__(self, base_url="", save_dir='KnowledgeGraph'):
@@ -86,11 +88,7 @@ class KnowledgeGraphConstructor:
         Returns:
             dict: 本体字典
         """
-        # 检查URL是否已爬取
-        if url in self.crawled_urls:
-            return None
-        
-        # 添加到已爬取集合
+        # 添加到已爬取集合，避免重复爬取
         self.crawled_urls.add(url)
         
         # 检查是否有缓存文件
@@ -169,10 +167,24 @@ class KnowledgeGraphConstructor:
             ontology, links = result
             print(f"links: {links}")
             
-            # 添加到图中
-            current_index = len(self.knowledge_graph)
-            url_to_index[url] = current_index
-            self.knowledge_graph.append(ontology)
+            # 检查当前URL是否已经存在于图中（可能是占位符）
+            if url in url_to_index:
+                current_index = url_to_index[url]
+                # 合并占位符信息与新提取的本体信息
+                # 确保children和parents列表不重复添加
+                existing_children = self.knowledge_graph[current_index].get("children", [])
+                existing_parents = self.knowledge_graph[current_index].get("parents", [])
+
+                # 更新本体信息，保留已有的children和parents
+                self.knowledge_graph[current_index].update(ontology)
+                self.knowledge_graph[current_index]["children"] = list(set(tuple(sorted(d.items())) for d in existing_children + ontology["children"]))
+                self.knowledge_graph[current_index]["parents"] = list(set(tuple(sorted(d.items())) for d in existing_parents + ontology["parents"]))
+
+            else:
+                # 添加到图中
+                current_index = len(self.knowledge_graph)
+                url_to_index[url] = current_index
+                self.knowledge_graph.append(ontology)
             
             # 处理链接
             if depth < max_depth:
@@ -192,12 +204,49 @@ class KnowledgeGraphConstructor:
                             "index": current_index
                         })
                     else:
-                        # 添加到队列中等待处理
-                        queue.append((link_url, depth + 1))
+                        # 如果链接未被处理过，添加到队列中，并为它在图中创建一个占位符
+                        if link_url not in self.crawled_urls:
+                            # 标记为已爬取，避免重复添加到队列
+                            self.crawled_urls.add(link_url)
+                            queue.append((link_url, depth + 1))
+
+                            # 为未来的子节点创建一个占位符，并建立父子关系
+                            placeholder_index = len(self.knowledge_graph)
+                            self.knowledge_graph.append({
+                                "name": link_text, # 暂时使用链接文本作为名称
+                                "URL": link_url,
+                                "children": [],
+                                "parents": [{
+                                    "name": ontology["name"],
+                                    "index": current_index
+                                }]
+                            })
+                            url_to_index[link_url] = placeholder_index
+
+                            self.knowledge_graph[current_index]["children"].append({
+                                "name": link_text,
+                                "index": placeholder_index
+                            })
+                        # 无论链接是否已在队列中或已处理，如果它在url_to_index中，都尝试建立关系
+                        elif link_url in url_to_index:
+                            child_index = url_to_index[link_url]
+                            # 避免重复添加父子关系
+                            if {"name": link_text, "index": child_index} not in self.knowledge_graph[current_index]["children"]:
+                                self.knowledge_graph[current_index]["children"].append({
+                                    "name": link_text,
+                                    "index": child_index
+                                })
+                            # 确保父节点关系也正确建立
+                            if {"name": ontology["name"], "index": current_index} not in self.knowledge_graph[child_index]["parents"]:
+                                self.knowledge_graph[child_index]["parents"].append({
+                                    "name": ontology["name"],
+                                    "index": current_index
+                                })
+
                     
-                    # print(f"已处理: {link_url}")
+                    print(f"\033[32m已处理: \033[0m{link_url}")
                 
-            # print(f"depth: {depth}")
+            print(f"depth: {depth}")
         
         return self.knowledge_graph
     
@@ -213,6 +262,10 @@ class KnowledgeGraphConstructor:
         """
         if output_path is None:
             output_path = os.path.join(self.save_dir, "knowledge_graph.json")
+        # 确保输出路径是绝对路径
+        if not os.path.isabs(output_path):
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            output_path = os.path.join(current_dir, output_path)
         
         try:
             with open(output_path, 'w', encoding='utf-8') as f:
@@ -225,17 +278,32 @@ class KnowledgeGraphConstructor:
 
 # 使用示例
 if __name__ == "__main__":
-    # 创建知识图谱构造器
-    constructor = KnowledgeGraphConstructor()
-    
-    # 构建知识图谱
-    start_url = "https://baike.baidu.com/item/知识图谱/8120012"
-    graph = constructor.build_graph(start_url, max_depth=1, max_nodes=10)
-    
-    # 保存知识图谱
-    constructor.save_graph()
-    
-    # 打印统计信息
-    print(f"\n知识图谱构建完成，共包含 {len(graph)} 个节点")
-    for i, node in enumerate(graph):
-        print(f"节点 {i+1}: {node['name']} - 子节点数: {len(node['children'])} - 父节点数: {len(node['parents'])}")
+    try:
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--base_url", type=str, default="https://baike.baidu.com/item/知识图谱/8120012", help="起始URL")
+        parser.add_argument('--max_depth', type=int, default=2, help='最大深度')
+        parser.add_argument('--max_nodes', type=int, default=1, help='最大节点数')
+        args = parser.parse_args()
+        # 创建知识图谱构造器
+        constructor = KnowledgeGraphConstructor()
+        
+        # 构建知识图谱
+        start_url = args.base_url or "https://baike.baidu.com/item/知识图谱/8120012"
+        print(f"开始构建知识图谱，起始URL: {start_url}")
+        graph = constructor.build_graph(start_url, max_depth=args.max_depth, max_nodes=args.max_nodes)
+        
+        # 保存知识图谱
+        if graph:
+            constructor.save_graph()
+        
+            # 打印统计信息
+            print(f"\n知识图谱构建完成，共包含\033[93m {len(graph)} \033[0m个节点")
+            for i, node in enumerate(graph):
+                print(f"节点 {i+1}: {node['name']} - 子节点数: {len(node['children'])} - 父节点数: {len(node['parents'])}")
+        else:
+            print("知识图谱构建失败，没有生成节点。")
+
+    except Exception as e:
+        print(f"\033[33m脚本执行过程中发生错误: {e}\033[0m")
+        import traceback
+        traceback.print_exc()
